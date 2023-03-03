@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
-export default function Movie(props) {
-  const movie = useSelector((store) => store.movies[props.sira]);
+export default function Movie({ sira }) {
+  const movie = useSelector((store) => store.movies[sira]);
 
   return (
     <div className="flex bg-white shadow-lg items-start">

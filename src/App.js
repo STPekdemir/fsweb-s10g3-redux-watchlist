@@ -5,22 +5,29 @@ import { favEkle, onceki, sonraki, basadon } from "./actions/actions";
 import { useSelector, useDispatch } from "react-redux";
 
 function App() {
+  const moviesLength = useSelector((store) => store.movies.length);
+
   const sira = useSelector((store) => store.sira);
+
   const favMovies = useSelector((store) => store.favMovies);
+
   const dispatch = useDispatch();
+
   function sonrakiFilm() {
     dispatch(sonraki());
   }
+
   function handleFavEkle(line) {
     dispatch(favEkle(line));
   }
+
   function oncekiFilm() {
     dispatch(onceki());
   }
+
   function basaDon() {
     dispatch(basadon());
   }
-  const moviesLength = useSelector((store) => store.movies.length);
 
   return (
     <div className="wrapper max-w-2xl mx-auto">
